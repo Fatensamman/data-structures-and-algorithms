@@ -142,8 +142,8 @@ let findMaleAndFemale = (data) => {
   let m = data.map(item => {
     if (item.gender === 'female' || item.gender === 'male') {
       return item.name
-    }
-  })
+    };
+  });
 let b= m.filter(i=>i)
   return b.join(' and ');
 };
