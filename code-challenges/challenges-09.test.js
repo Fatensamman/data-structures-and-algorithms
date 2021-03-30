@@ -21,7 +21,7 @@ Becomes:
 function transformToLis(obj) {
 let key = Object.keys(obj);
 let value=Object.values(obj);
-let newarray=keys.map((item,index) =>{
+let newarray=key.map((item,index) =>{
 return `<li>${item} : ${value[index]}</li>`;
 })
 return newarray;
