@@ -1,4 +1,4 @@
-# Reverse Array 
+# Shift Array 
 
 ## Challenge
 Write a function which takes in an array and the value to be added. return an array with the new value added at the middle index.
