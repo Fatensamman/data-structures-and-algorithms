@@ -54,4 +54,56 @@ describe('test linked list', () => {
     ll.insert(300);
     expect(ll.toString()).toEqual('{ 300 } -> { 400 } -> { 200 } -> NULL/');
   });
+  it('It Can add a node to the end of the linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(400);
+    ll.insert(300);
+    ll.append(500);
+    expect(ll.toString()).toEqual('{ 300 } -> { 400 } -> { 200 } -> { 500 } -> NULL/');
+  });
+  it('It Can add multiple nodes to the end of a linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 500 } -> { 100 } -> NULL/');
+  });
+  it('It Can insert a node before a node located i the middle of a linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    ll.insertBefore(500,250);
+    expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 250 } -> { 500 } -> { 100 } -> NULL/');
+  });
+  it('It Can insert a node before the first node of a linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    ll.insertBefore(300,250);
+    expect(ll.toString()).toEqual('{ 250 } -> { 300 } -> { 200 } -> { 500 } -> { 100 } -> NULL/');
+  });
+  it('It Can insert after a node in the middle of the linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    ll.insertAfter(200,250);
+    expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 250 } -> { 500 } -> { 100 } -> NULL/');
+  });
+  it('It Can insert a node after the last node of the linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    ll.insertAfter(100,250);
+    expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 500 } -> { 100 } -> { 250 } -> NULL/');
+  });
 });
