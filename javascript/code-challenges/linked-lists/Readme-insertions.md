@@ -15,3 +15,5 @@
 
 ## solution
 ![image](../assets/insertion.jpg)
+
+[link to the code](./linked-list.js)
