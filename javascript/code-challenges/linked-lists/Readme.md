@@ -19,5 +19,6 @@ create a linked list with minimum 2 nodes
 - to string method  : it returns a string representing all the values in the Linked List, formatted as:
 "{ a } -> { b } -> { c } -> NULL/"
 
-[Read-Linked List-Insertion](Readme-insertions.md)
-[Read-Linked List-get-at-reverse-index](Readme-getAt.md)
+- [Read-Linked List-Insertion](Readme-insertions.md)
+
+- [Read-Linked List-get-endindex](Readme-getAt.md)
