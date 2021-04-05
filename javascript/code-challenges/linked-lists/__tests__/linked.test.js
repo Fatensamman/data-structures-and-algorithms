@@ -53,6 +53,8 @@ describe('test linked list', () => {
     ll.insert(400);
     ll.insert(300);
     expect(ll.toString()).toEqual('{ 300 } -> { 400 } -> { 200 } -> NULL/');
+    expect(ll.size).toEqual(3);
+
   });
   it('It Can add a node to the end of the linked list', () => {
     let ll= new LinkedList;
@@ -60,6 +62,8 @@ describe('test linked list', () => {
     ll.insert(400);
     ll.insert(300);
     ll.append(500);
+    expect(ll.size).toEqual(4);
+
     expect(ll.toString()).toEqual('{ 300 } -> { 400 } -> { 200 } -> { 500 } -> NULL/');
   });
   it('It Can add multiple nodes to the end of a linked list', () => {
@@ -68,6 +72,8 @@ describe('test linked list', () => {
     ll.insert(300);
     ll.append(500);
     ll.append(100);
+    expect(ll.size).toEqual(4);
+
     expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 500 } -> { 100 } -> NULL/');
   });
   it('It Can insert a node before a node located i the middle of a linked list', () => {
@@ -77,6 +83,8 @@ describe('test linked list', () => {
     ll.append(500);
     ll.append(100);
     ll.insertBefore(500,250);
+    expect(ll.size).toEqual(5);
+
     expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 250 } -> { 500 } -> { 100 } -> NULL/');
   });
   it('It Can insert a node before the first node of a linked list', () => {
@@ -86,6 +94,8 @@ describe('test linked list', () => {
     ll.append(500);
     ll.append(100);
     ll.insertBefore(300,250);
+    expect(ll.size).toEqual(5);
+
     expect(ll.toString()).toEqual('{ 250 } -> { 300 } -> { 200 } -> { 500 } -> { 100 } -> NULL/');
   });
   it('It Can insert after a node in the middle of the linked list', () => {
@@ -95,6 +105,8 @@ describe('test linked list', () => {
     ll.append(500);
     ll.append(100);
     ll.insertAfter(200,250);
+    expect(ll.size).toEqual(5);
+
     expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 250 } -> { 500 } -> { 100 } -> NULL/');
   });
   it('It Can insert a node after the last node of the linked list', () => {
@@ -104,6 +116,54 @@ describe('test linked list', () => {
     ll.append(500);
     ll.append(100);
     ll.insertAfter(100,250);
+    expect(ll.size).toEqual(5);
+
     expect(ll.toString()).toEqual('{ 300 } -> { 200 } -> { 500 } -> { 100 } -> { 250 } -> NULL/');
+  });
+  it('It should test Where k is greater than the length of the linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    ll.insertAfter(100,250);
+    expect(ll.size).toEqual(5);
+    expect(ll.kthFromEnd(6)).toEqual('exception!');
+  });
+  it('It should test Where k and the length of the list are the same', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    ll.insertAfter(100,250);
+    expect(ll.size).toEqual(5);
+    expect(ll.kthFromEnd(4)).toEqual(300);
+  });
+  it('It should test Where k is not a positive integer', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    ll.insert(300);
+    ll.append(500);
+    ll.append(100);
+    ll.insertAfter(100,250);
+    expect(ll.size).toEqual(5);
+    expect(ll.kthFromEnd(-1)).toEqual('exception!');
+  });
+  it('It should test Where the linked list is of a size 1', () => {
+    let ll= new LinkedList;
+    ll.insert(200);
+    expect(ll.size).toEqual(1);
+    expect(ll.kthFromEnd(0)).toEqual(200);
+  });
+  it('It should test where k is not at the end, but somewhere in the middle of the linked list', () => {
+    let ll= new LinkedList;
+    ll.insert(300);
+    ll.insert(200);
+    ll.append(500);
+    ll.append(100);
+    ll.insertAfter(100,250);
+    expect(ll.size).toEqual(5);
+    expect(ll.kthFromEnd(3)).toEqual(300);
   });
 });
