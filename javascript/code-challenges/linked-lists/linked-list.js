@@ -55,7 +55,6 @@ module.exports = class LinkedList {
     if (this.size > 0) {
       if (value === this.head.amount) {
         this.insert(newVal);
-        this.size++;
         return;
       }else{
         let node = new Node(newVal);
@@ -67,8 +66,9 @@ module.exports = class LinkedList {
         }
         node.next = current;
         previous.next= node;
-        this.size++;
       }
+      this.size++;
+
     }else return;
   }
   insertAfter(value, newVal) {
@@ -85,5 +85,17 @@ module.exports = class LinkedList {
       previous.next= node;
       this.size++;
     }else return;
+  }
+  kthFromEnd(k){
+    let current = this.head;
+    let count = this.size-1;
+    while(current){
+      if(count===k){
+        return current.amount;
+      }
+      count--;
+      current=current.next;
+    }
+    return 'exception!';
   }
 };
