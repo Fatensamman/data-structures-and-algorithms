@@ -37,20 +37,36 @@ module.exports = class LinkedList {
   }
 
 
-  append(value) {
-    let node = new Node(value);
-    let thisOne = this.head;
-    if (!thisOne) {
-      thisOne = node;
-    } else {
-      while (thisOne.next) {
-        thisOne = thisOne.next;
-      }
-      thisOne.next = node;
-    }
-    this.size++;
-  }
+  // append(value) {
+  //   let node = new Node(value);
+  //   let thisOne = this.head;
+  //   if (!thisOne) {
+  //     thisOne = node;
+  //   } else {
+  //     while (thisOne.next) {
+  //       thisOne = thisOne.next;
+  //     }
+  //     thisOne.next = node;
+  //   }
+  //   this.size++;
+  // }
 
+  append(value) {
+    if (!this.head) {
+        this.head = new Node(value);
+        this.size++;
+        return this.head;
+      }
+  
+      let current = this.head;
+  
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = new Node(value);
+      this.size++;
+      return this.head;
+}
   insertBefore(value, newVal) {
     if (this.size > 0) {
       if (value === this.head.amount) {

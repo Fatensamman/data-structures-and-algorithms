@@ -3,6 +3,13 @@
 const Linkedlist = require('../linked-lists/linked-list.js');
 const Node = require('../linked-lists/node.js');
 
+const ll1 = new Linkedlist();
+ll1.insert(44);
+ll1.insert(88);
+let ll2= new Linkedlist();
+ll2.insert(11);
+ll2.insert(55);
+
 function zipLists (ll1,ll2){
   const ll3 = new Linkedlist();
   let firstNode = ll1.head;
@@ -21,4 +28,9 @@ function zipLists (ll1,ll2){
   return str;
 }
 
+console.log((ll1.toString(),ll2.toString()));
+
 module.exports = zipLists ;
+
+
+
