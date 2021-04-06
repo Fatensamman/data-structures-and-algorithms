@@ -10,23 +10,13 @@
 
 
 ## Challenge
-create a linked list with minimum 2 nodes
+Write a function which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped lis
 
 ## Approach & Efficiency
-- create a node class with two propertes : data, and next ;- create a linked list class , 
-- create 3 methods belongs tho linked list class which are
-* insert -> big O Time O(1), 
-* include ,
-* to string
+- require the linked list which we created before
+- create a function which takes two linked lists as arguments. Zip the two linked lists together into one
+- used the methods that we created before.
+- return a function.
 
-## API
-- insert method which takes a value as an argument : it create a new node with given value and add it to the head of the linked list.
+## solution
 
-- include method which takes a value as an argument: it returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
-
-- to string method  : it returns a string representing all the values in the Linked List, formatted as:
-"{ a } -> { b } -> { c } -> NULL/"
-
-- [Read-Linked List-Insertion](Readme-insertions.md)
-
-- [Read-Linked List-get-endindex](Readme-getAt.md)
