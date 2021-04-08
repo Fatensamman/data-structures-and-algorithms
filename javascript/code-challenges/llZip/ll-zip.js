@@ -14,8 +14,8 @@ ll2.insert(120);
 ll2.insert(130);
 ll2.insert(150);
 console.log(ll2.toString());
-reverse(ll2);
-console.log(ll2.toString());
+// reverse(ll2);
+// console.log(ll2.toString());
 
 
 
