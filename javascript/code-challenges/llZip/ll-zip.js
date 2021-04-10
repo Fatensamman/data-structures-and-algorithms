@@ -9,11 +9,8 @@ ll1.insert(88);
 let ll2= new Linkedlist();
 ll2.insert(11);
 ll2.insert(55);
-ll2.insert(110);
-ll2.insert(120);
-ll2.insert(130);
-ll2.insert(150);
-console.log(ll2.toString());
+
+// console.log(ll2.toString());
 // reverse(ll2);
 // console.log(ll2.toString());
 
@@ -27,6 +24,7 @@ function zipLists (ll1,ll2){
     if(firstNode ){
       ll3.append(firstNode.amount);
       firstNode=firstNode.next;
+      console.log(ll3);
     }
     if(secondNode){
       ll3.append(secondNode.amount);
@@ -37,7 +35,7 @@ function zipLists (ll1,ll2){
   return str;
 }
 
-// console.log((ll1.toString(),ll2.toString()));
+console.log(zipLists(ll1,ll2));
 
 module.exports = zipLists ;
 

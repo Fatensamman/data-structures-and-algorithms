@@ -37,80 +37,82 @@ module.exports = class LinkedList {
   }
 
 
-  // append(value) {
-  //   let node = new Node(value);
-  //   let thisOne = this.head;
-  //   if (!thisOne) {
-  //     thisOne = node;
-  //   } else {
-  //     while (thisOne.next) {
-  //       thisOne = thisOne.next;
-  //     }
-  //     thisOne.next = node;
-  //   }
-  //   this.size++;
-  // }
-
   append(value) {
+    // let node = new Node(value);
+    // let thisOne = this.head;
     if (!this.head) {
-        this.head = new Node(value);
-        this.size++;
-        return this.head;
-      }
-  
-      let current = this.head;
-  
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = new Node(value);
+      this.head = new Node(value);
       this.size++;
       return this.head;
-}
+    }
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = new Node(value);
+    this.size++;
+  }
+
+  // append(value) {
+  //   if (!this.head) {
+  //     this.head = new Node(value);
+  //     this.size++;
+  //     return this.head;
+  //   }
+
+  //   let current = this.head;
+
+  //   while (current.next) {
+  //     current = current.next;
+  //   }
+  //   current.next = new Node(value);
+  //   this.size++;
+  //   // return this.head;
+  // }
   insertBefore(value, newVal) {
     if (this.size > 0) {
       if (value === this.head.amount) {
         this.insert(newVal);
         return;
-      }else{
+      } else {
         let node = new Node(newVal);
         let current = this.head;
         let previous;
         while (value !== current.amount) {
-          previous= current;
+          previous = current;
           current = current.next;
         }
         node.next = current;
-        previous.next= node;
+        previous.next = node;
       }
       this.size++;
 
-    }else return;
+    } else return;
   }
   insertAfter(value, newVal) {
     if (this.size > 0) {
       let node = new Node(newVal);
       let current = this.head.next;
-      let previous=this.head;
+      let previous = this.head;
       while (value !== previous.amount) {
-        previous= current;
+        previous = current;
         current = previous.next;
       }
       // node.next=value;
       node.next = current;
-      previous.next= node;
+      previous.next = node;
       this.size++;
-    }else return;
+    } else return;
   }
-  kthFromEnd(k){
+  kthFromEnd(k) {
     let current = this.head;
-    let count = this.size-1;
-    while(current){
-      if(count===k){
+    let count = this.size - 1;
+    while (current) {
+      if (count === k) {
         return current.amount;
       }
       count--;
-      current=current.next;
+      current = current.next;
     }
     return 'exception!';
   }
