@@ -11,4 +11,5 @@
 |05|[Linked-Lists-insertions](./linked-lists/Readme-insertions.md)|
 |06|[Linked-Lists-GetAt](./linked-lists/Readme-getAt.md)|
 |07|[Zip two linked lists](./llZip/Readme.md)|
-|07|[stack-and-queue](./stack-and-queue/Readme.md)|
+|08|[stack-and-queue](./stack-and-queue/Readme.md)|
+|09|[queue-with-stacks](./queue-with-stacks/Readme.md)|
