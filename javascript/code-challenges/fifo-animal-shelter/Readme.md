@@ -11,4 +11,4 @@ Big O: Space: O(1) Time: O(1)
 
 
 ## Solution
-![image](../assets/queueWithStack.jpg)
+![image](../assets/fifo.jpg)
