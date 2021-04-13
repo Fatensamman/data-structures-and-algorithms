@@ -1,58 +1,31 @@
 'use strict';
 
-class Node {
-  constructor(data, next = null) {
-    this.type = data;
-    this.next = next;
-  }
-}
-class Queue {
-  constructor() {
-    this.front = null;
-    this.size = 0;
-  }
-  enqueue(value) {
-    if (!this.front) {
-      this.front = new Node(value);
-      this.size++;
-    } else {
-      let current = this.front;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = new Node(value);
-      this.size++;
-    }
-  }
-  dequeue() {
-    if (!this.front) {
-      return 'exception';
-    }
-    let current = this.front;
-    this.front = current.next;
-    this.size--;
-    return current.data;
-  }
-}
+let { Stack } = require('../stack-and-queue/stack-and-queue.js');
+
 class AnimalShelter {
   constructor() {
-    this.dogs = new Queue();
-    this.cats = new Queue();
+    this.dogs = new Stack();
+    this.cats = new Stack();
   }
   enqueue(animal) {
     if (typeof animal === 'object' && animal.type === 'dog') {
-      this.dogs.enqueue(animal);
+      this.dogs.push(animal);
     } else if (typeof animal === 'object' && animal.type === 'cat') {
-      this.cats.enqueue(animal);
+      this.cats.push(animal);
     } else {
       return 'this shelter only for dogs and cats';
     }
   }
   dequeue(pref) {
+    if (this.cats.isEmpty()) {
+      while (!this.dogs.isEmpty()) {
+        this.cats.push(this.dogs.pop());
+      }
+    }
     if (pref === 'dog'){
-      this.dogs.dequeue();
+      this.dogs.pop();
     } else if (pref === 'cat') {
-      this.cats.dequeue();
+      this.cats.pop();
     } else {
       return null;
     }
