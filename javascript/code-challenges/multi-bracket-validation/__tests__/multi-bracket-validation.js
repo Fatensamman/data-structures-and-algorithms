@@ -12,9 +12,9 @@ describe('balanced brackets', () => {
     expect(test2).toBeFalsy();
   });
   it(' 1 It should return false if the string doesnt contain brackets', () => {
-    let str = 'hello here I am this is me';
+    let str = '{(})';
     let test1 =multiBracketValidation(str);
-    expect(test1).toBeFalsy();
+    expect(test1).toBeTruthy();
   });
   it(' 1 It should test if the string is empty', () => {
     let str = '';
