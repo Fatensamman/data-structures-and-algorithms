@@ -15,3 +15,4 @@
 |09|[queue-with-stacks](./queue-with-stacks/Readme.md)|
 |10|[fifo-animal-shelter](./fifo-animal-shelter/Readme.md)|
 |11|[multi-bracket-validation](./multi-bracket-validation/Readme.md)|
+|12|[Tree](./tree/Readme.md)|
