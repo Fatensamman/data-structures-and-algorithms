@@ -1,99 +1,106 @@
 'use strict';
 
 class Node {
-  constructor(amount, next = null) {
-    this.amount = amount;
-    this.next = next;
+  constructor(value, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
   }
 }
 
-class Stack {
-  constructor() {
-    this.top = null;
-    this.size = 0;
+class BinaryTree {
+  constructor(root = null) {
+    this.root = root;
   }
-  push(value) {
-    this.top = new Node(value, this.top);
-    this.size++;
-  }
-  pop() {
-    if (!this.top) {
-      return 'exception';
-    }
-    let current = this.top;
-    this.top = current.next;
-    this.size--;
-    return current.amount;
-  }
-  peek() {
-    if (!this.top) {
-      return 'exception';
-    }
-    return this.top.amount;
-  }
-  isEmpty() {
-    if (!this.top) {
-      return true;
-    } else return false;
-  }
-}
-// let n = new Stack();
-// n.push(1);
-// n.push(2);
-// n.push(3);
-// // console.log(n.top);
-// // n.pop();
-// // console.log(n.top);
-// n.pop();
-// console.log(n.isEmpty());
-
-class Queue {
-  constructor() {
-    this.front = null;
-    this.size = 0;
-  }
-  enqueue(value) {
-    if (!this.front) {
-      this.front = new Node(value);
-      this.size++;
-    } else {
-      let current = this.front;
-      while (current.next) {
-        current = current.next;
+  preOrder() {
+    const result = [];
+    const _traverse = (node) => {
+      result.push(node.value);
+      if (node.left) {
+        _traverse(node.left);
       }
-      current.next = new Node(value);
-      this.size++;
-    }
+      if (node.right) {
+        _traverse(node.right);
+      }
+    };
+    _traverse(this.root);
+    return result;
   }
-  dequeue() {
-    if (!this.front) {
-      return 'exception';
-    }
-    let current = this.front;
-    this.front = current.next;
-    this.size--;
-    return current.amount;
+  inOrder() {
+    const result = [];
+    const _traverse = (node) => {
+      if (node.left) {
+        _traverse(node.left);
+      }
+      result.push(node.value);
+      if (node.right) {
+        _traverse(node.right);
+      }
+    };
+    _traverse(this.root);
+    return result;
   }
-  peek() {
-    if (!this.front) {
-      return 'exception';
-    }
-    return this.front.amount;
-  }
-  isEmpty() {
-    if (!this.front) {
-      return true;
-    } else return false;
+  postOrder() {
+    const result = [];
+    const _traverse = (node) => {
+      if (node.left) {
+        _traverse(node.left);
+      }
+      if (node.right) {
+        _traverse(node.right);
+      }
+      result.push(node.value);
+    };
+    _traverse(this.root);
+    return result;
   }
 }
-module.exports = {
-  Stack: Stack,
-  Queue: Queue
-};
-// let n = new Queue();
-// n.enqueue(1);
-// n.enqueue(5);
-// n.dequeue();
-// console.log(n.isEmpty());
 
+class BinarySearchTree {
+  constructor(root = null) {
+    this.root = root;
+  }
+  add(value) {
+    var newNode = new Node(value);
+    if (!this.root) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
+  insertNode(node, newNode) {
+    if (newNode.value < node.value) {
+      if (!node.left) {
+        node.left = newNode;
+      } else {
+        this.insertNode(node.left, newNode);
+      }
+
+    } else if (!node.right) {
+      node.right = newNode;
+    } else {
+      this.insertNode(node.right, newNode);
+    }
+  }
+  contains(value) {
+    if (this.root === null){
+      return 'Empty Tree!';
+    }
+    let current = this.root;
+    while (current) {
+      if (value < current.value){
+        current = current.left;
+      } else if (value > current.value){
+        current = current.right;
+      }else return true;
+    }
+    return false;
+  }
+}
+
+module.exports = {
+  Node: Node,
+  BinaryTree: BinaryTree,
+  BinarySearchTree: BinarySearchTree
+};
 
