@@ -54,6 +54,20 @@ class BinaryTree {
     _traverse(this.root);
     return result;
   }
+  findMax() {
+    if (!this.root) {
+      return 'exception';
+    } else {
+      let arrResult = this.postOrder();
+      let max = 0;
+      for (let i = 0; i < arrResult.length; i++) {
+        if (arrResult[i] > max) {
+          max = arrResult[i];
+        }
+      }
+      return max;
+    }
+  }
 }
 
 class BinarySearchTree {
@@ -83,19 +97,20 @@ class BinarySearchTree {
     }
   }
   contains(value) {
-    if (this.root === null){
+    if (this.root === null) {
       return 'Empty Tree!';
     }
     let current = this.root;
     while (current) {
-      if (value < current.value){
+      if (value < current.value) {
         current = current.left;
-      } else if (value > current.value){
+      } else if (value > current.value) {
         current = current.right;
-      }else return true;
+      } else return true;
     }
     return false;
   }
+
 }
 
 module.exports = {
