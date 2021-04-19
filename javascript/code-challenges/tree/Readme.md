@@ -12,7 +12,7 @@ Time : O(n)
 
 * BinarySearchTree :
 Space : O(h)
-Time : O(n)
+Time : O(log(n))
 
 ## API
 
@@ -27,7 +27,7 @@ Define a method named add that accepts a value, and adds a new node with that va
 Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 
-#### find max method
+## find max method
 
 ## Challenge:
 Find the Maximum Value in a Binary Tree
@@ -44,3 +44,28 @@ Time : O(n)
 
 ## solution
 ![image](../assets/findmaxtree.jpg)
+
+## Challenge:
+Write a breadth first traversal method which takes a Binary Tree as its unique input.
+
+## Approach & Efficiency
+  - declare a variable node and assign it to this.root
+
+  - declare an array and assign it to node
+
+  - declare an empty array
+
+  - do while loop to iterate over the array
+
+  - remove the first  element in array and assign it to node variable
+
+  - push the value to result array
+
+  - do if statement if there left node push the left node if there  right node push the right node
+
+  - return the max variable
+
+ note : we can use linked list , dequeue , enqueue methods also.
+- 
+## solution
+![image](../assets/Breadth.jpg)
