@@ -24,15 +24,32 @@ describe('Binary Search Tree', () => {
 
 describe('Binary tree', () => {
     let tree;
+    let treeNum;
     beforeAll(() => {
-        const one = new Node('z');
-        const two = new Node('y');
-        const three = new Node('x');
-        const four = new Node('w');
-        const five = new Node('v');
-        const six = new Node('u');
-        const seven = new Node('t');
-        const eight = new Node('s');
+        const z = new Node('z');
+        const y = new Node('y');
+        const x = new Node('x');
+        const w = new Node('w');
+        const v = new Node('v');
+        const u = new Node('u');
+        const t = new Node('t');
+        const s = new Node('s');
+        z.left = y;
+        z.right = x;
+        y.left = w;
+        y.right = v;
+        v.left = s;
+        x.left = u;
+        x.right = t;
+        tree = new BinaryTree(z);
+        const one = new Node(1);
+        const two = new Node(2);
+        const three = new Node(3);
+        const four = new Node(4);
+        const five = new Node(5);
+        const six = new Node(6);
+        const seven = new Node(7);
+        const eight = new Node(8);
         one.left = two;
         one.right = three;
         two.left = four;
@@ -40,7 +57,7 @@ describe('Binary tree', () => {
         five.left = eight;
         three.left = six;
         three.right = seven;
-        tree = new BinaryTree(one);
+        treeNum = new BinaryTree(one);
     });
     it('preOrder', () => {
         const expected = ['z', 'y', 'w', 'v', 's', 'x', 'u', 't'];
@@ -58,24 +75,8 @@ describe('Binary tree', () => {
         expect(postOrder).toEqual(expected);
     });
     it('postOrder', () => {
-        const one = new Node(1);
-        const two = new Node(2);
-        const three = new Node(3);
-        const four = new Node(4);
-        const five = new Node(5);
-        const six = new Node(6);
-        const seven = new Node(7);
-        const eight = new Node(8);
-        one.left = two;
-        one.right = three;
-        two.left = four;
-        two.right = five;
-        five.left = eight;
-        three.left = six;
-        three.right = seven;
-        let tree = new BinaryTree(one);
         const expected = 8;
-        const findMax = tree.findMax();
+        const findMax = treeNum.findMax();
         expect(findMax).toEqual(expected);
     });
     it('sholud return expetion when the tree is empty',()=>{
@@ -83,24 +84,8 @@ describe('Binary tree', () => {
         let findMax = newTree.findMax()
         expect(findMax).toEqual('exception');
     });
-    it('sholud return expetion when the tree is empty',()=>{
-        const one = new Node(1);
-        const two = new Node(2);
-        const three = new Node(3);
-        const four = new Node(4);
-        const five = new Node(5);
-        const six = new Node(6);
-        const seven = new Node(7);
-        const eight = new Node(8);
-        one.left = two;
-        one.right = three;
-        two.left = four;
-        two.right = five;
-        five.left = eight;
-        three.left = six;
-        three.right = seven;
-        let tree = new BinaryTree(one);
-        let findMax = tree.breadthFirstLTR();
-        expect(findMax).toEqual([1,2,3,4,5,6,7,8]);
+    it('sholud return Breadth-first Traversal array',()=>{
+        let fBreadth = treeNum.breadthFirstLTR();
+        expect(fBreadth).toEqual([1,2,3,4,5,6,7,8]);
     })
 });
