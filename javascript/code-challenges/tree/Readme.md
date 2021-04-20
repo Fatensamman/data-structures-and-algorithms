@@ -1,10 +1,10 @@
 
 # Tree
 
-## Challenge
+### Challenge 
 Create three classes: Node, BinaryTree, and BinarySearchTree, each with its own set of methods for the root, left, and right Node, and each method doing something different to execute this tree.
 
-## Approach & Efficiency
+### Approach & Efficiency
 
 * BinaryTree :
 Space : O(h)
@@ -14,7 +14,7 @@ Time : O(n)
 Space : O(h)
 Time : O(log(n))
 
-## API
+### API
 
 - BinaryTree :
 
@@ -29,10 +29,10 @@ Define a method named contains that accepts a value, and returns a boolean indic
 
 ## find max method
 
-## Challenge:
+### Challenge 2:
 Find the Maximum Value in a Binary Tree
 
-## Approach & Efficiency
+### Approach & Efficiency
   - use postOrder method to return ordered Tree
   - declare a variable max and assign it to zero
   - do for loop to iterate over the array 
@@ -42,13 +42,15 @@ Find the Maximum Value in a Binary Tree
 Space : O(h)
 Time : O(n)
 
-## solution
+### solution
 ![image](../assets/findmaxtree.jpg)
 
-## Challenge:
+## Breadth-first Traversal.
+
+### Challenge 3:
 Write a breadth first traversal method which takes a Binary Tree as its unique input.
 
-## Approach & Efficiency
+### Approach & Efficiency
   - declare a variable node and assign it to this.root
 
   - declare an array and assign it to node
@@ -65,7 +67,7 @@ Write a breadth first traversal method which takes a Binary Tree as its unique i
 
   - return the max variable
 
- note : we can use linked list , dequeue , enqueue methods also.
-- 
-## solution
+ note : we can use  Queue linked list , dequeue , enqueue methods also.
+
+### solution
 ![image](../assets/Breadth.jpg)
