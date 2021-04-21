@@ -1,5 +1,5 @@
 
-# Tree
+# fiz buzz
 
 ### Challenge 
 Conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree.
