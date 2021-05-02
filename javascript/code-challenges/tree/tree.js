@@ -75,11 +75,38 @@ class BinaryTree {
     while (tree.length) {
       node = tree.shift();
       result.push(node.value);
-      if(node.left) tree.push(node.left);
-      if(node.right) tree.push(node.right);
+      if (node.left) tree.push(node.left);
+      if (node.right) tree.push(node.right);
     }
     return result;
   }
+
+}
+function breadthFirstLR(v) {
+  var node = v.root;
+  var tree = [node];
+  var result = 0;
+  while (tree.length) {
+    node = tree.shift();
+    if (node.value % 2) {
+      result += node.value;
+    }
+    if (node.left) tree.push(node.left);
+    if (node.right) tree.push(node.right);
+  }
+  return result;
+}
+function compareByLeaf(tree, tree2) {
+  let sum = 0;
+  function leafCount(node) {
+    if (!node) return 0;
+    if (!node.left && !node.right) return 1;
+    sum = leafCount(node.left) + leafCount(node.right);
+    return sum;
+  }
+  if (leafCount(tree.root) !== leafCount(tree2.root)) {
+    return false;
+  } else return true;
 }
 const one = new Node(1);
 const two = new Node(2);
@@ -97,7 +124,8 @@ five.left = eight;
 three.left = six;
 three.right = seven;
 let tree = new BinaryTree(one);
-console.log(tree.breadthFirstLTR());
+let tree2 = new BinaryTree(two);
+console.log(breadthFirstLR(tree));
 
 
 

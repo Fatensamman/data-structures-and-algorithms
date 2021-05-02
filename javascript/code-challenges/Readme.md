@@ -16,3 +16,4 @@
 |10|[fifo-animal-shelter](./fifo-animal-shelter/Readme.md)|
 |11|[multi-bracket-validation](./multi-bracket-validation/Readme.md)|
 |12|[Tree](./tree/Readme.md)|
+|13|[Sort](./sort/Readme.md)|
