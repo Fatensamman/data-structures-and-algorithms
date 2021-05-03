@@ -1,5 +1,5 @@
 'use strict';
-const sort = require('../sort.js');
+const sort = require('../sortMerge.js');
 
 
 describe('should sort the array', () => {
@@ -9,12 +9,12 @@ describe('should sort the array', () => {
   });
   it('should sort the reverse sorted array', () => {
     let arr = [20,18,12,5,5,-2];
-    console.log(arr);
+    // console.log(arr);
     expect(sort(arr)).toStrictEqual([-2,5,5,12,18,20]);
   });
   it('should sort the few uniques array', () => {
     let arr = [5,12,7,5,5,7];
-    console.log(arr);
+    // console.log(arr);
     expect(sort(arr)).toStrictEqual([5,5,5,7,7,12]);
   });
 });
