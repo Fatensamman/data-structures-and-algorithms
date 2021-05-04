@@ -1,5 +1,18 @@
 'use strict';
 let arr = [8, 4, 23, 42, 16, 15];
+
+const mergeSort = (arr) => {
+  if (arr.length > 1) {
+    const mid = Math.floor(arr.length / 2);
+    const left = arr.slice(0, mid);
+    const right = arr.slice(mid, arr.length);
+    const sortedLeft = mergeSort(left);
+    const sortedRight = mergeSort(right);
+    return merge(sortedLeft, sortedRight);
+  }
+  else return arr;
+};
+
 const merge = (left, right) => {
   const arr = [];
   while (left.length && right.length) {
@@ -17,17 +30,7 @@ const merge = (left, right) => {
   }
   return arr;
 };
-const mergeSort = (arr) => {
-  if (arr.length > 1) {
-    const mid = Math.floor(arr.length / 2);
-    const left = arr.slice(0, mid);
-    const right = arr.slice(mid, arr.length);
-    const sortedLeft = mergeSort(left);
-    const sortedRight = mergeSort(right);
-    return merge(sortedLeft, sortedRight);
-  }
-  else return arr;
-};
+
 console.log(mergeSort(arr));
 
 module.exports = mergeSort;
