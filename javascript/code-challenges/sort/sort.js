@@ -1,18 +1,14 @@
 'use strict';
 
 function insertSort(arr) {
-  let min = 0;
-  let temp = 0;
-  for (let i = 0; i < arr.length - 1; i++) {
-    min = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[min]) {
-        min = j;
-      }
+  for (let i = 1; i < arr.length; i++) {
+    let j = i - 1;
+    let temp = arr[i];
+    while (j >= 0 && temp < arr[j]) {
+      arr[j + 1] = arr[j];
+      j = j - 1;
     }
-    temp = arr[min];
-    arr[min] = arr[i];
-    arr[i] = temp;
+    arr[j + 1] = temp;
   }
   return arr;
 }
