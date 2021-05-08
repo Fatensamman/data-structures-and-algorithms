@@ -58,13 +58,16 @@ class HashTable {
 
 const hashTable = new HashTable();
 hashTable.add('firstName', 'Ahmad');
-// hashTable.add('secondName', 'Moh');
-// hashTable.add('thirddName', 'heba');
-// hashTable.add('fourthdName', 'faten');
-// hashTable.add('family', 'Test');
+hashTable.add('secondName', 'Moh');
+hashTable.add('thirddName', 'heba');
+hashTable.add('fourthdName', 'faten');
+hashTable.add('family', 'Test');
 
 
 // console.log('table is :',hashTable.table);
-console.log(hashTable.get('fourtame'));
+// console.log(hashTable.get('tame'));
+// console.log(hashTable.get('firstName'));
+// console.log(hashTable.hash('firstName'));
+// console.log(hashTable.contains('firstName'));
 
 module.exports = HashTable;
