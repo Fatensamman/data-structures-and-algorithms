@@ -20,3 +20,4 @@
 |14|[sortMerge](./sortMerge/Readme.md)|
 |14|[sortQuick](./sortQuick/Readme.md)|
 |14|[hashtable](./hashtable/Readme.md)|
+|17|[treeIntersection](./treeIntersection/Readme.md)|

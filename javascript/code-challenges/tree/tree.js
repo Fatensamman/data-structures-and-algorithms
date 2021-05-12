@@ -125,7 +125,7 @@ three.left = six;
 three.right = seven;
 let tree = new BinaryTree(one);
 let tree2 = new BinaryTree(two);
-console.log(breadthFirstLR(tree));
+// console.log(breadthFirstLR(tree));
 
 
 
