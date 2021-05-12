@@ -21,3 +21,4 @@
 |15|[sortQuick](./sortQuick/Readme.md)|
 |16|[hashtable](./hashtable/Readme.md)|
 |17|[repeatedWord](./repeatedWord/Readme.md)|
+|17|[treeIntersection](./treeIntersection/Readme.md)|
