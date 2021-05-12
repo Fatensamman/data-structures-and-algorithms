@@ -32,7 +32,7 @@ class HashTable {
     const hash = this.hash(key);
     const itemsInBucket = this.table[hash];
     if (itemsInBucket === undefined) {
-      console.log('lllllllllllllllllllllll')
+      // console.log('lllllllllllllllllllllll')
       return null;
     }
     else {
@@ -46,7 +46,7 @@ class HashTable {
     }
   }
   contains(key) {
-    if (this.get(key) === undefined) {
+    if (!this.get(key)) {
       return false;
     }
     else {
@@ -63,11 +63,14 @@ hashTable.add('thirddName', 'heba');
 hashTable.add('fourthdName', 'faten');
 hashTable.add('family', 'Test');
 
-
+let i = ['1','yo','io','to','yo'];
+i.forEach(element => {
+  hashTable.add(element,element);
+});
 // console.log('table is :',hashTable.table);
 // console.log(hashTable.get('tame'));
 // console.log(hashTable.get('firstName'));
 // console.log(hashTable.hash('firstName'));
-// console.log(hashTable.contains('firstName'));
+// console.log(hashTable.contains('tpp'));
 
 module.exports = HashTable;

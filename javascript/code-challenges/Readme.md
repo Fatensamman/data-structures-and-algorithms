@@ -18,6 +18,7 @@
 |12|[Tree](./tree/Readme.md)|
 |13|[Sort](./sort/Readme.md)|
 |14|[sortMerge](./sortMerge/Readme.md)|
-|14|[sortQuick](./sortQuick/Readme.md)|
-|14|[hashtable](./hashtable/Readme.md)|
+|15|[sortQuick](./sortQuick/Readme.md)|
+|16|[hashtable](./hashtable/Readme.md)|
+|17|[repeatedWord](./repeatedWord/Readme.md)|
 |17|[treeIntersection](./treeIntersection/Readme.md)|
